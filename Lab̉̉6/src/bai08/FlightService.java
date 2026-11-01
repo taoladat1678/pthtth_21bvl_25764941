@@ -1,0 +1,16 @@
+package bai08;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.Map;
+
+/**
+ * Interface cho dịch vụ Quản lý Đặt vé máy bay qua RMI.
+ */
+public interface FlightService extends Remote {
+    boolean bookTicket(String flightNumber, int seats) throws RemoteException;
+    int availableSeats(String flightNumber) throws RemoteException;
+    boolean cancelBooking(String flightNumber, int seats) throws RemoteException;
+    Map<String, Integer> getAllFlights() throws RemoteException;
+}
+
